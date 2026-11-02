@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #173B2B;
+    color: #FFFFFF;
+    min-height: 100vh;
+    
+    
+}
+
+
+.page-container {
+    width: 100%;
+    max-width: 386px;
+    min-height: 100vh;
+    margin-right: 65% auto;
+    padding: 38px 42px 38px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.logo-icon {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E5F0E9;
+    color: #173B2B;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+
+.main-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+
+.hero {
+    width: 100%;
+    margin-top: 0;
+}
+
+
+.hero h1 {
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -1.2px;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+
+.description {
+    font-size: 12px;
+    line-height: 1.7;
+    font-weight: 400;
+    color: #A9B8B0;
+    margin-bottom: 18px;
+}
+
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+
+.task {
+    width: 100%;
+    min-height: 34px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    background-color: #254737;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 400;
+    color: #D5DED8;
+}
+
+
+.task input {
+    width: 14px;
+    height: 14px;
+    accent-color: #E5F0E9;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+
+.task.completed span {
+    text-decoration: line-through;
+    color: #8D9D93;
+}
+
+
+.footer {
+    font-size: 9px;
+    font-weight: 400;
+    color: #8FA99A;
+    text-decoration: underline;
+    margin-top: auto;
+}
+
+
+@media (max-width: 400px) {
+    .page-container {
+        padding-left: 11%;
+        padding-right: 11%;
+    }
+}

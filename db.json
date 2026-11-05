@@ -1,0 +1,17 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "fullName": "Ahmed Raza",
+      "email": "ahmed@studio93.io",
+      "password": "password123"
+    },
+
+    {
+      "id": 2,
+      "fullName": "Ahmed Raza",
+      "email": "ahmad@studio93.io",
+      "password": "password123"
+    }
+  ]
+}

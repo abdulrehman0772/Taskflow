@@ -79,10 +79,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 if (!response.ok) throw new Error('Signup failed');
-
+                 window.location.href = './dashboard.html';
                 alert('Account created successfully!');
 
-                window.location.href = './login.html';
+                window.location.href = './dashboard.html';
 
             } catch (error) {
                 console.error(error);

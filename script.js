@@ -83,6 +83,7 @@ document.addEventListner('DOMContentLoaded', () => {
 
             const email = emailInput.value.trim();
             const password = passwordInput.value;
+        }
 
             try {
                 const response = await fetch(

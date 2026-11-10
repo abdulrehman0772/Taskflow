@@ -309,8 +309,8 @@ padding-right:35x;
 @media screen and (max-width: 390px) {
 
     body {
-        background-color: #ffffff;
-        color: #1d2923;
+        background-color: rgba(255, 255, 255, 1);
+        color: rgba(47, 107, 79, 1);
     }
 
     .page-container {

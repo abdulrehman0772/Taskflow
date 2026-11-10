@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task list</title>
+
+    <link rel="stylesheet" href="./stylesheets/dashboard-stylesheet.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+
+        <div class="logo">
+            <span><img src="C:\Users\HUSSNAIN.COM\taskflow\images\tick.png"></span>
+            <h3>TaskFlow</h3>
+        </div>
+
+        <div class="user-section">
+            <div class="user-avatar">AR</div>
+            <span>Hi, Ahmed</span>
+            <button class="logout-btn">Log out</button>
+        </div>
+    </header>
+     <main class="container">
+    <h2>My tasks</h2>
+        <p class="date">Monday, 2 November</p>
+
+        <div class="task-input">
+
+            <input type="text" placeholder="What do you need to do?">
+            <button>Add task</button>
+
+        </div>
+ <div class="filters">
+
+            <button class="active">All</button>
+            <button>Active</button>
+            <button>Completed</button>
+
+        </div>
+
+
+        <div class="task-list2">
+
+            <div class="task completed">
+                <input type="checkbox" checked>
+                <span>Set up VS Code and Live Server</span>
+                <button class="img-del"><img src="C:\Users\HUSSNAIN.COM\taskflow\images\Frame.png"></button>
+            </div>
+
+            <div class="task completed">
+                <input type="checkbox" checked>
+                <span>Read MDN guide on Flexbox</span>
+                <button class="img-del"><img src="C:\Users\HUSSNAIN.COM\taskflow\images\Frame.png"></button>
+            </div>
+
+            <div class="task">
+                <input type="checkbox">
+                <span>Finish the login page layout</span>
+                <button class="img-del"><img src="C:\Users\HUSSNAIN.COM\taskflow\images\Frame.png"></button>
+            </div>
+
+            <div class="task">
+                <input type="checkbox">
+                <span>Add form validation to signup</span>
+                <button class="img-del"><img src="C:\Users\HUSSNAIN.COM\taskflow\images\Frame.png"></button>
+            </div>
+
+            <div class="task">
+                <input type="checkbox">
+                <span>Connect todos to json-server</span>
+                <button class="img-del"><img src="C:\Users\HUSSNAIN.COM\taskflow\images\Frame.png"></button>
+            </div>
+
+            <div class="task-footer">
+                3 items left
+            </div>
+
+        </div>
+
+
+   </main>
+</body>
+</html>

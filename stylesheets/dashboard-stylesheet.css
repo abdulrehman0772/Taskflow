@@ -20,8 +20,8 @@ body {
     padding: 0 30px;
 }
 img{
-    width: 32px;
-    height:   32px;
+    width: fixed 32px;
+    height:  fixed 32px;
     border-radius: 8px;
 }
 .logo {
@@ -90,6 +90,10 @@ span{
     line-height: 100%;
     letter-spacing: 0%;
     cursor: pointer;
+}
+.logout-after{
+    display: none;
+
 }
 .container {
     width: 508px;
@@ -354,22 +358,13 @@ button.img-del {
     }
 
     .logout-btn {
-        width: 30px;
-        height: 30px;
-        padding: 0;
-        font-size: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid #d5ddd8;
-        border-radius: 7px;
+        display:none;
     }
-
-    .logout-btn::after {
-        content: "↪";
-        font-size: 18px;
-        color: #53645a;
-    }
+.logout-after{
+    display: inline;
+    
+}
+   
 
     .container {
         width: 100%;
@@ -481,8 +476,8 @@ button.img-del {
     }
 
     .img-del {
-        width: 23px !important;
-        height: 23px !important;
+        width: 23px ;
+        height: 23px ;
         flex-shrink: 0;
         display: flex;
         align-items: center;

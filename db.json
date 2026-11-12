@@ -11,36 +11,13 @@
       "fullName": "Ahmed Raza",
       "email": "ahmad@studio93.io",
       "password": "password123"
-    },
+    }
+  ],
+  "tasks": [
     {
-      "fullName": "asd",
-      "email": "abdulrehmaan685@gmail.com",
-      "password": "asdfghjkl",
-      "id": "cueoAIApB3s"
-    },
-    {
-      "fullName": "ahmad",
-      "email": "test@studio93.io",
-      "password": "123456",
-      "id": "XFQcrWmQCNc"
-    },
-    {
-      "fullName": "hanan",
-      "email": "hanan@gmail.com",
-      "password": "asdewq",
-      "id": "vALux03ek58"
-    },
-    {
-      "fullName": "bnu",
-      "email": "bnu@test.io",
-      "password": "bnubnu",
-      "id": "SJLqg0gpMwI"
-    },
-    {
-      "fullName": "adil",
-      "email": "adil@example.com",
-      "password": "qwerty",
-      "id": "JD4LuWJSrcs"
+      "title": "go home",
+      "completed": false,
+      "id": "Cf9kw018r04"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

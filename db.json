@@ -35,6 +35,12 @@
       "email": "bnu@test.io",
       "password": "bnubnu",
       "id": "SJLqg0gpMwI"
+    },
+    {
+      "fullName": "adil",
+      "email": "adil@example.com",
+      "password": "qwerty",
+      "id": "JD4LuWJSrcs"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

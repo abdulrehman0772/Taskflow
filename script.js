@@ -79,10 +79,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 if (!response.ok) throw new Error('Signup failed');
-                 window.location.href = './dashboard.html';
+                 window.location.href = './empty-task.html';
                 alert('Account created successfully!');
 
-                window.location.href = './dashboard.html';
+                window.location.href = './empty-task.html';
 
             } catch (error) {
                 console.error(error);
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         JSON.stringify(matchedUser)
                     );
 
-                    window.location.href = './dashboard.html';
+                    window.location.href = './empty-task.html';
 
                 } else {
                     showError(emailInput, 'Invalid email or password');
@@ -141,4 +141,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
- 

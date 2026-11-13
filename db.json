@@ -11,13 +11,54 @@
       "fullName": "Ahmed Raza",
       "email": "ahmad@studio93.io",
       "password": "password123"
+    },
+    {
+      "fullName": "abdulrehman",
+      "email": "abdulrehmaan685@gmail.com",
+      "password": "asdfgh",
+      "id": "Kn6KQ7ASFkM"
     }
   ],
   "tasks": [
     {
-      "title": "go home",
+      "title": "work",
+      "completed": true,
+      "id": "0wORhMCrhZk"
+    },
+    {
+      "title": "lunch",
+      "completed": true,
+      "id": "VFMTFrf6Tqg"
+    },
+    {
+      "title": "off to leave",
       "completed": false,
-      "id": "Cf9kw018r04"
+      "id": "oKPnSsMBTaI"
+    },
+    {
+      "title": "reach home",
+      "completed": false,
+      "id": "-PMd77zPJ0Y"
+    },
+    {
+      "title": "Dinner",
+      "completed": false,
+      "id": "bSN4m_5Osr4"
+    },
+    {
+      "title": "go to bed",
+      "completed": false,
+      "id": "tZDXwH8H9i0"
+    },
+    {
+      "title": "sleep",
+      "completed": false,
+      "id": "xZ4k_wAxeaY"
+    },
+    {
+      "title": "repeat",
+      "completed": false,
+      "id": "eqIi8GIOEyM"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

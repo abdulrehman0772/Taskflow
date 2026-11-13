@@ -196,7 +196,7 @@ span{
 }
 
 .filters .active {
-    width: 45px;
+    
     height: 32px;
     border-radius: 7px;
     padding-bottom:7px ;
@@ -225,7 +225,7 @@ span{
     flex-direction: column;   
     align-items: center;      
     justify-content: center;  
-    text-align: center;
+    
     
 }
 
@@ -258,26 +258,35 @@ span{
 }
 
 .empty-card.has-tasks {
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
-    padding: 20px;
-    gap: 10px;
+    padding: 0; 
+    gap: 0;
     height: auto;
     min-height: 240px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
 }
 
 .task-item {
-    background-color: #eef3f0;
-    padding: 15px 20px;
-    border-radius: 8px;
+    background-color: transparent;
+    padding: 16px 20px;
+    border-bottom: 1px solid #eee; 
     display: flex;
     align-items: center;
     gap: 15px;
     width: 100%;
-    min-height: 55px;
 }
 
-.task-item input {
+.task-item:last-of-type {
+    border-bottom: none;
+}
+
+.task-item input[type="checkbox"] {
     width: 18px;
     height: 18px;
     cursor: pointer;
@@ -288,6 +297,31 @@ span{
     font-family: "DM Sans", sans-serif;
     font-size: 15px;
     color: #18221d;
+    flex:1;
+}
+
+
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.delete-btn:hover {
+    opacity: 1;
+}
+
+.task-footer {
+    padding: 15px 20px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    color: #666;
+    background-color: #f9fbf9;
+    border-top: 1px solid #eee;
+    margin-top: auto; 
 }
 
 

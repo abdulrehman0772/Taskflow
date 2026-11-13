@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
 
     const taskInput = document.querySelector('.task-input input');
@@ -15,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let tasks = [];
     let currentFilter = 'All';
 
-    // DISPLAY TASKS
 
     function displayTasks() {
 
@@ -97,8 +95,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
             });
 
+            
+            const deleteBtn = document.createElement('button');
+            deleteBtn.className = 'delete-btn';
+            deleteBtn.innerHTML = '<img src="Frame.png">';
+
+            deleteBtn.addEventListener('click', async () => {
+                try {
+                    const response = await fetch(`${API_URL}/${task.id}`, {
+                        method: 'DELETE'
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Could not delete task');
+                    }
+
+                    tasks = tasks.filter(t => t.id !== task.id);
+                    displayTasks();
+
+                } catch (error) {
+                    console.error(error);
+                    alert('Could not delete task.');
+                }
+            });
+
             taskItem.appendChild(checkbox);
             taskItem.appendChild(title);
+            taskItem.appendChild(deleteBtn); 
 
             taskCard.prepend(taskItem);
 
@@ -106,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
-    // LOAD TASKS FROM JSON SERVER
+    
 
     async function loadTasks() {
 
@@ -126,11 +149,13 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.error(error);
             alert('JSON Server connection failed!');
+
         }
+
 
     }
 
-    // ADD NEW TASK
+
 
     async function addTask() {
 
@@ -188,21 +213,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
-    // ADD BUTTON CLICK
+    
+addButton.addEventListener('click', addTask);
 
-    addButton.addEventListener('click', addTask);
-
-    // PRESS ENTER TO ADD TASK
+    
 
     taskInput.addEventListener('keydown', event => {
 
-        if (event.key === 'Enter') {
+        
+if (event.key === 'Enter') {
             addTask();
         }
+    
 
     });
+    
 
-    // FILTER BUTTONS
 
     filterButtons.forEach(button => {
 
@@ -219,6 +245,14 @@ document.addEventListener('DOMContentLoaded', () => {
             displayTasks();
 
         });
+
+const logoutBtn = document.querySelector('.logout-btn');
+if (logoutBtn) {
+    logoutBtn.addEventListener('click', () => {
+        window.location.href = 'index.html'; 
+    });
+}
+
 
     });
 

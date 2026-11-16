@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
 
     const taskInput = document.querySelector('.task-input input');
@@ -15,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     );
 
     if (!loggedInUser || !loggedInUser.id) {
-        window.location.href = 'empty-task.html';
+        window.location.href = 'index.html';
         return;
     }
 
@@ -106,6 +105,80 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
             });
+            const editBtn = document.createElement('button');
+
+editBtn.className = 'edit-btn';
+editBtn.textContent = 'Edit';
+
+editBtn.addEventListener('click', () => {
+
+    const editInput = document.createElement('input');
+
+    editInput.type = 'text';
+    editInput.value = task.title;
+    editInput.className = 'edit-input';
+
+    const saveBtn = document.createElement('button');
+    saveBtn.textContent = 'Save';
+    saveBtn.className = 'save-btn';
+
+    const cancelBtn = document.createElement('button');
+    cancelBtn.textContent = 'Cancel';
+    cancelBtn.className = 'cancel-btn';
+
+    title.replaceWith(editInput);
+
+    editBtn.style.display = 'none';
+
+    taskItem.insertBefore(saveBtn, deleteBtn);
+    taskItem.insertBefore(cancelBtn, deleteBtn);
+
+    editInput.focus();
+
+    cancelBtn.addEventListener('click', () => {
+        editInput.replaceWith(title);
+        saveBtn.remove();
+        cancelBtn.remove();
+        editBtn.style.display = '';
+    });
+
+    saveBtn.addEventListener('click', async () => {
+
+        const updatedTitle = editInput.value.trim();
+
+        if (updatedTitle === '') {
+            alert('Task cannot be empty!');
+            return;
+        }
+
+        try {
+
+            const response = await fetch(`${API_URL}/${task.id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    title: updatedTitle
+                })
+            });
+
+            if (!response.ok) {
+                throw new Error('Could not update task');
+            }
+
+            task.title = updatedTitle;
+
+            displayTasks();
+
+        } catch (error) {
+            console.error(error);
+            alert('Could not update task!');
+        }
+
+    });
+
+});
 
 
             const deleteBtn = document.createElement('button');
@@ -133,8 +206,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             });
 
+
             taskItem.appendChild(checkbox);
             taskItem.appendChild(title);
+            taskItem.appendChild(editBtn);
             taskItem.appendChild(deleteBtn);
 
             taskCard.prepend(taskItem);
@@ -281,3 +356,4 @@ document.addEventListener('DOMContentLoaded', () => {
     loadTasks();
 
 });
+

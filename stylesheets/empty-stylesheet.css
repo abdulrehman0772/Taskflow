@@ -255,6 +255,7 @@ span{
     margin-top: 12px;
     color: rgba(86, 98, 91, 1);
     justify-content: center;
+    padding-left:20px;
 }
 
 .empty-card.has-tasks {
@@ -298,6 +299,57 @@ span{
     font-size: 15px;
     color: #18221d;
     flex:1;
+}
+
+.edit-btn {
+    border: none;
+    background: transparent;
+    color: #2e7054;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: auto;
+    margin-right: 12px;
+    
+}
+
+.edit-btn:hover {
+    color: #1d4935;
+    
+}
+.edit-input {
+    flex: 1;
+    min-width: 0;
+    padding: 8px;
+    border: 1px solid #307456;
+    border-radius: 6px;
+    outline: none;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.save-btn,
+.cancel-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+.save-btn {
+    color: white;
+    background-color:#307456;
+    width:120px;
+    height: 40px;
+    border:none;
+    border-radius:8px;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.cancel-btn {
+    color: #777;
 }
 
 

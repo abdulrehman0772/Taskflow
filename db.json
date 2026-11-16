@@ -75,12 +75,6 @@
   ],
   "tasks": [
     {
-      "title": "asdfg",
-      "completed": true,
-      "userId": "90WMOHtaCtM",
-      "id": "DNUokVuh4fE"
-    },
-    {
       "title": "1234",
       "completed": false,
       "userId": "1",
@@ -115,6 +109,18 @@
       "completed": true,
       "userId": "zByEEG5Lr0s",
       "id": "jyQ4gcqcR-o"
+    },
+    {
+      "title": "go home",
+      "completed": false,
+      "userId": "90WMOHtaCtM",
+      "id": "Uqn8GADHc1c"
+    },
+    {
+      "title": "Dinner",
+      "completed": false,
+      "userId": "90WMOHtaCtM",
+      "id": "5OM6TLG9gCw"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

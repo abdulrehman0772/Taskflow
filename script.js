@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const form = document.querySelector('.login-form');
@@ -25,8 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
         input.style.borderColor = '#D9534F';
     }
 
-  
-
     const fullNameInput = form.querySelector('#name');
     const emailInput = form.querySelector('#email');
     const passwordInputs = form.querySelectorAll('#password');
@@ -38,6 +37,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
+
+            form.querySelectorAll('.error-text').forEach(error => {
+                error.remove();
+            });
+
+            form.querySelectorAll('input').forEach(input => {
+                input.style.borderColor = '';
+            });
 
             const fullName = fullNameInput.value.trim();
             const email = emailInput.value.trim();
@@ -79,10 +86,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 if (!response.ok) throw new Error('Signup failed');
-                 window.location.href = './empty-task.html';
-                alert('Account created successfully!');
 
-                window.location.href = './empty-task.html';
+const newUser = await response.json();
+
+localStorage.setItem(
+    'loggedInUser',
+    JSON.stringify(newUser)
+);
+
+alert('Account created successfully!');
+
+window.location.href = './empty-task.html';
 
             } catch (error) {
                 console.error(error);

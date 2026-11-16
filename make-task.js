@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const taskInput = document.querySelector('.task-input input');
@@ -8,6 +9,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!taskInput || !addButton || !taskCard) return;
 
     const API_URL = 'http://localhost:3000/tasks';
+
+    const loggedInUser = JSON.parse(
+        localStorage.getItem('loggedInUser')
+    );
+
+    if (!loggedInUser || !loggedInUser.id) {
+        window.location.href = 'empty-task.html';
+        return;
+    }
+
+    const currentUserId = String(loggedInUser.id);
 
     const emptyMessage = taskCard.innerHTML;
 
@@ -95,12 +107,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             });
 
-            
+
             const deleteBtn = document.createElement('button');
             deleteBtn.className = 'delete-btn';
             deleteBtn.innerHTML = '<img src="Frame.png">';
 
             deleteBtn.addEventListener('click', async () => {
+
                 try {
                     const response = await fetch(`${API_URL}/${task.id}`, {
                         method: 'DELETE'
@@ -117,11 +130,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     console.error(error);
                     alert('Could not delete task.');
                 }
+
             });
 
             taskItem.appendChild(checkbox);
             taskItem.appendChild(title);
-            taskItem.appendChild(deleteBtn); 
+            taskItem.appendChild(deleteBtn);
 
             taskCard.prepend(taskItem);
 
@@ -129,12 +143,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
-    
+
 
     async function loadTasks() {
 
         try {
-            const response = await fetch(API_URL);
+            const response = await fetch(
+                `${API_URL}?userId=${encodeURIComponent(currentUserId)}`
+            );
 
             if (!response.ok) {
                 throw new Error('Could not load tasks');
@@ -151,7 +167,6 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('JSON Server connection failed!');
 
         }
-
 
     }
 
@@ -179,7 +194,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 body: JSON.stringify({
                     title: title,
-                    completed: false
+                    completed: false,
+                    userId: currentUserId
                 })
             });
 
@@ -213,21 +229,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
-    
-addButton.addEventListener('click', addTask);
 
-    
+    addButton.addEventListener('click', addTask);
+
+
 
     taskInput.addEventListener('keydown', event => {
 
-        
-if (event.key === 'Enter') {
+        if (event.key === 'Enter') {
             addTask();
         }
-    
 
     });
-    
+
 
 
     filterButtons.forEach(button => {
@@ -246,15 +260,23 @@ if (event.key === 'Enter') {
 
         });
 
-const logoutBtn = document.querySelector('.logout-btn');
-if (logoutBtn) {
-    logoutBtn.addEventListener('click', () => {
-        window.location.href = 'index.html'; 
     });
-}
 
 
-    });
+
+    const logoutBtn = document.querySelector('.logout-btn');
+
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', () => {
+
+            localStorage.removeItem('loggedInUser');
+
+            window.location.href = 'index.html';
+
+        });
+    }
+
+
 
     loadTasks();
 

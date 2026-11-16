@@ -1,64 +1,120 @@
 {
   "users": [
     {
-      "id": "1",
-      "fullName": "Ahmed Raza",
-      "email": "ahmed@studio93.io",
-      "password": "password123"
-    },
-    {
-      "id": "2",
-      "fullName": "Ahmed Raza",
-      "email": "ahmad@studio93.io",
-      "password": "password123"
-    },
-    {
-      "fullName": "abdulrehman",
+      "fullName": "Abdul Rehman",
       "email": "abdulrehmaan685@gmail.com",
-      "password": "asdfgh",
-      "id": "Kn6KQ7ASFkM"
+      "password": "123456",
+      "id": "90WMOHtaCtM"
+    },
+    {
+      "fullName": "ahmed",
+      "email": "ahmed@gmail.com",
+      "password": "123456",
+      "id": "mEC8lIJtLQA"
+    },
+    {
+      "fullName": "ali",
+      "email": "ali@gmail.com",
+      "password": "123456",
+      "id": "kNYR0B_v4w8"
+    },
+    {
+      "fullName": "abdullah",
+      "email": "abdullah@gmail.com",
+      "password": "123456",
+      "id": "zByEEG5Lr0s"
+    },
+    {
+      "fullName": "MR",
+      "email": "mr@gmail.com",
+      "password": "123456",
+      "id": "WwpBoOPeo9o"
+    },
+    {
+      "fullName": "asd",
+      "email": "asd@gmail.com",
+      "password": "123456",
+      "id": "LkbIXvpJJEg"
+    },
+    {
+      "fullName": "aa",
+      "email": "aa@gmail.com",
+      "password": "123456",
+      "id": "5tTcxE5FCHs"
+    },
+    {
+      "fullName": "man",
+      "email": "man@gmail.com",
+      "password": "123456",
+      "id": "iLLKOcFpW8A"
+    },
+    {
+      "fullName": "mrs",
+      "email": "mrs@gmail.com",
+      "password": "123456",
+      "id": "YbcqBO634S4"
+    },
+    {
+      "fullName": "mrs",
+      "email": "mrq@gmail.com",
+      "password": "123455",
+      "id": "sGmChtFyzKc"
+    },
+    {
+      "fullName": "Bruce Earley",
+      "email": "bruce@gmail.com",
+      "password": "123456",
+      "id": "we9K_-Atzyw"
+    },
+    {
+      "fullName": "lesli",
+      "email": "lesli@gmail.com",
+      "password": "123456",
+      "id": "U3XRoYp3S1w"
     }
   ],
   "tasks": [
     {
-      "title": "work",
+      "title": "asdfg",
       "completed": true,
-      "id": "0wORhMCrhZk"
+      "userId": "90WMOHtaCtM",
+      "id": "DNUokVuh4fE"
     },
     {
-      "title": "lunch",
+      "title": "1234",
+      "completed": false,
+      "userId": "1",
+      "id": "EY_Gyq-Dl3M"
+    },
+    {
+      "title": "123",
+      "completed": false,
+      "userId": "1",
+      "id": "jrvHV2OAKhM"
+    },
+    {
+      "title": "911",
+      "completed": false,
+      "userId": "2",
+      "id": "4rvTysbj3rw"
+    },
+    {
+      "title": "1234",
+      "completed": false,
+      "userId": "mEC8lIJtLQA",
+      "id": "6ETUgU7l9q0"
+    },
+    {
+      "title": "1223344",
+      "completed": false,
+      "userId": "kNYR0B_v4w8",
+      "id": "Zca-L_lvGYQ"
+    },
+    {
+      "title": "gud morning",
       "completed": true,
-      "id": "VFMTFrf6Tqg"
-    },
-    {
-      "title": "off to leave",
-      "completed": false,
-      "id": "oKPnSsMBTaI"
-    },
-    {
-      "title": "reach home",
-      "completed": false,
-      "id": "-PMd77zPJ0Y"
-    },
-    {
-      "title": "Dinner",
-      "completed": false,
-      "id": "bSN4m_5Osr4"
-    },
-    {
-      "title": "go to bed",
-      "completed": false,
-      "id": "tZDXwH8H9i0"
-    },
-    {
-      "title": "sleep",
-      "completed": false,
-      "id": "xZ4k_wAxeaY"
-    },
-    {
-      "title": "repeat",
-      "completed": false,
-      "id": "eqIi8GIOEyM"
+      "userId": "zByEEG5Lr0s",
+      "id": "jyQ4gcqcR-o"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

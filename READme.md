@@ -1,131 +1,175 @@
-TaskFlow - Modern Task Management Application
+# TaskFlow - Modern Task Management Application
 
-TaskFlow is a sleek, web-based task management application designed to help users organize their daily workflow efficiently. It features user authentication (Sign Up & Log In) and a full-featured To-Do dashboard with real-time editing, filtering, and task management capabilities connected to a mock database backend (db.json).
+TaskFlow is a sleek, web-based task management application designed to help users organize their daily workflow efficiently. It features user authentication (Sign Up & Log In) and an interactive To-Do dashboard with task creation, deletion, inline editing, filtering, and task completion capabilities connected to a mock database backend (`db.json`) using JSON Server.
 
-📸 Overview of Screens & Features
+## 📸 Overview of Screens & Features
 
-1. Sign-Up Page (/signup.html)
+### 1. Sign-Up Page (`/signup.html`)
 
-Purpose: Allows new users to create a TaskFlow account.
+**Purpose:** Allows new users to create a TaskFlow account.
 
-Fields: Full Name, Email, Password, Confirm Password.
+**Fields:** Full Name, Email, Password, Confirm Password.
 
-Key Features & Validation:
+**Key Features & Validation:**
+- Checks if the email already exists in `db.json`.
+- Verifies that passwords match and are at least 6 characters long.
+- Displays inline field-level validation errors in red.
+- Provides a direct link to navigate to the Log In page.
 
-Checks if the email already exists in db.json.
+### 2. Log-In Page (`/index.html` or `/login.html`)
 
-Verifies that passwords match and are at least 6 characters long.
+**Purpose:** Authenticates existing users to access their task dashboard.
 
-Displays inline field-level validation errors in red.
+**Fields:** Email, Password.
 
-Direct link to navigate to the Log In page.
+**Key Features & Validation:**
+- Validates credentials against registered users in `db.json`.
+- Displays a top banner error (`Invalid email or password`) when authentication fails.
+- Redirects authenticated users to the task dashboard.
+- Provides a direct link to navigate to the Sign Up page.
 
-2. Log-In Page (/login.html)
+### 3. Task Dashboard (`/empty-task.html`)
 
-Purpose: Authenticates existing users to access their task dashboard.
+**Purpose:** Allows logged-in users to manage their daily tasks from one place.
 
-Fields: Email, Password.
+**Header & User Profile:**
+- Displays the current user's avatar initials and personalized greeting (e.g., `AR - Hi, Ahmed`).
+- Includes a Log Out button to end the current session.
 
-Key Features & Validation:
+**Adding Tasks:**
+- Provides a task input field and an Add Task button.
+- Allows users to create and add new tasks to their task list.
+- Saves newly created tasks to `db.json` through JSON Server.
 
-Validates credentials against recorded users in db.json.
+**Task Filtering:**
 
-Displays a top banner error (Invalid email or password) when authentication fails.
+Three functional filter buttons help users organize their tasks:
 
-Direct link to navigate to the Sign Up page.
+- **All:** Displays all tasks, including completed and incomplete tasks.
+- **Active:** Displays only incomplete or pending tasks.
+- **Completed:** Displays only tasks marked as completed.
 
-3. Task Dashboard (/index.html or /dashboard.html)
+**Task Status Counter:**
+- Dynamically displays the number of remaining incomplete tasks (e.g., `3 items left`).
+- Updates automatically when tasks are added, completed, or deleted.
 
-Header & User Profile:
+### 4. Interactive Task Management
 
-Displays current user avatar initials and greeting (e.g., AR - Hi, Ahmed).
+The TaskFlow dashboard provides the following task management features:
 
-Includes a Log out button to end the session.
+**Checkboxes:**
+- Allows users to mark tasks as completed or incomplete.
+- Applies line-through styling to completed tasks.
+- Updates task completion status in `db.json`.
 
-Adding Tasks:
+**Delete Task:**
+- Includes a Delete button with a trash icon.
+- Permanently removes the selected task from the task list and `db.json`.
 
-Input Field & "Add task" Button: Allows users to create a new task item quickly.
+**Inline Task Editing:**
+- Allows users to edit an existing task by double-clicking its title.
+- Displays an input field pre-filled with the current task title.
+- Provides a Save button to update and save edited task details.
+- Provides a Cancel button to discard changes and restore the original title.
+- Supports keyboard shortcuts:
+  - `Enter` to save changes.
+  - `Esc` to cancel editing.
 
-Filtering:
+**Real-Time Task Updates:**
+- Updates the dashboard after adding, editing, deleting, or completing tasks.
+- Keeps task information synchronized with the JSON Server backend.
 
-Filter tabs for All, Active, and Completed tasks.
+### 5. Project Structure
 
-Item Status Counter:
+```text
+TaskFlow/
+│
+├── index.html                  # Login Interface
+├── signup.html                 # User Registration Interface
+├── empty-task.html              # Main Task Management Dashboard
+├── dashboard.html               # Task Dashboard UI Design
+├── dashboard2.html              # Task Editing UI Design
+│
+├── style.css                    # Main Stylesheet
+├── dashboard-stylesheet.css     # Dashboard Stylesheet
+├── edit-dashboard.css           # Editing Dashboard Styles
+├── empty-stylesheet.css         # Main Task Dashboard Styles
+│
+├── script.js                    # Login/Authentication Logic
+├── make-task.js                 # Task Management Logic
+│
+└── db.json                      # Mock Database (Users & Tasks)
+```
 
-Dynamically counts remaining uncompleted items (e.g., 3 items left).
+### 6. Technologies Used
 
-4. Interactive Task Management & Inline Editing
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- JSON Server (Mock REST API)
+- Local Storage (User Session Management)
+- Visual Studio Code
+- Live Server
 
-Checkboxes: Toggle task completion (applies line-through visual styling to completed tasks).
+### 🚀 Getting Started
 
-Delete Button (Trash Icon): Permanently deletes a task from the list and database.
+**Prerequisites**
 
-Inline Editing Mode:
+- A modern web browser (Chrome, Edge, Firefox, or Safari).
+- Visual Studio Code.
+- Node.js and npm.
+- Live Server extension.
+- JSON Server.
 
-Double-clicking a task activates inline edit mode.
+**Running the Project**
 
-Input Box: Pre-populated with existing task title.
+**Step 1: Open the Project**
 
-Save Button: Commits the edited task text.
+Open the TaskFlow project folder in VS Code.
 
-Cancel Button: Reverts changes without saving.
+**Step 2: Launch Live Server**
 
-Keyboard Shortcuts: Press Enter to save or Esc to cancel.
+Right-click `index.html` or `login.html` and select **Open with Live Server**.
 
-🛠️ Project Structure
+**Step 3: Start JSON Server**
 
-├── index.html          # Main Task Dashboard
-├── login.html          # Login Interface
-├── signup.html         # User Registration Interface
-├── style.css           # Global Stylesheet (Custom CSS / Design System)
-├── script.js           # Frontend Logic & Event Listeners
-└── db.json             # Mock Database (Users & Tasks Data)
+Open the VS Code terminal and run:
 
-
-🚀 Getting Started
-
-Prerequisites
-
-A web browser (Chrome, Edge, Firefox, or Safari).
-
-VS Code with the Live Server extension (or json-server installed via Node.js).
-
-Running the Project
-
-Clone or Download the Repository:
-
-git clone https://github.com/abdulrehman0772/Taskflow.git  
-
-
-Launch with Live Server:
-
-Open the project folder in VS Code.
-
-Right-click login.html or index.html and select "Open with Live Server".
-
-(Optional) Run Mock REST API using json-server:
-If using json-server to handle standard RESTful API requests (GET, POST, PUT, DELETE):
-
-npm install -g json-server
+```bash
 npx json-server --watch db.json --port 3000
+```
 
+The API will be available at:
 
-🔑 Demo Account Credentials
+```text
+http://localhost:3000
+```
 
-Use these pre-configured credentials in db.json for testing:
+### 🔑 Demo Account Credentials
 
-Email: ahmed@studio93.io
+Use these pre-configured credentials from `db.json`:
 
-Password: password123
+- **Email:** ahmed@gmail.com
+- **Password:** 123456
 
-🎨 UI & Design Palette
+### 🎨 UI & Design Palette
 
-Primary Dark Green: #265C47
+| Element | Color |
+|---|---|
+| Primary Dark Green | `#265C47` |
+| Primary Hover Green | `#1E4838` |
+| Background Tint | `#F2F5F3` |
+| Error Red | `#D9534F` |
+| Error Background | `#FDF2F0` |
 
-Primary Hover Green: #1E4838
+### 📌 Key Highlights
 
-Background Tint: #F2F5F3
-
-Error Red: #D9534F
-
-Error Background: #FDF2F0
+- User Registration and Authentication.
+- Personalized Task Management Dashboard.
+- Add, Edit, and Delete Tasks.
+- Mark Tasks as Completed or Active.
+- Functional All, Active, and Completed Filters.
+- Dynamic Remaining Task Counter.
+- Inline Editing with Save and Cancel options.
+- Keyboard Support for Editing.
+- JSON Server Integration for Data Management.

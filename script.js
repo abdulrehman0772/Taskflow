@@ -1,10 +1,10 @@
 
 
-document.addEventListener('DOMContentLoaded', () => {
+
 
     const form = document.querySelector('.login-form');
 
-    if (!form) return;
+    if (form) {
 
     // ERROR FUNCTION
 
@@ -206,4 +206,4 @@ window.location.href = './empty-task.html';
 
     }
 
-});
+};

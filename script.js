@@ -1,4 +1,5 @@
 
+
 document.addEventListener('DOMContentLoaded', () => {
 
     const form = document.querySelector('.login-form');
@@ -50,7 +51,20 @@ document.addEventListener('DOMContentLoaded', () => {
             const email = emailInput.value.trim();
             const password = passwordInput.value;
             const confirmPassword = confirmPasswordInput.value;
+             
+try {
+                const checkResponse = await fetch(
+                    `http://localhost:3000/users?email=${encodeURIComponent(email)}`
+                );
+           
+ const existingUsers = await checkResponse.json();
 
+                if (existingUsers.length > 0) {
+                    showError(emailInput, 'Email already registered');
+                    return;
+                }
+
+               
             if (password.length < 6) {
                 showError(passwordInput, 'Password must be at least 6 characters');
                 return;
@@ -60,19 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 showError(confirmPasswordInput, "Passwords don't match");
                 return;
             }
-
-            try {
-                const checkResponse = await fetch(
-                    `http://localhost:3000/users?email=${encodeURIComponent(email)}`
-                );
-
-                const existingUsers = await checkResponse.json();
-
-                if (existingUsers.length > 0) {
-                    showError(emailInput, 'Email already registered');
-                    return;
-                }
-
+             
+                
                 const response = await fetch('http://localhost:3000/users', {
                     method: 'POST',
                     headers: {
@@ -84,6 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         password
                     })
                 });
+
+           
 
                 if (!response.ok) throw new Error('Signup failed');
 

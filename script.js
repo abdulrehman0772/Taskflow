@@ -22,10 +22,57 @@ document.addEventListener('DOMContentLoaded', () => {
             error.style.marginTop = '6px';
             group.appendChild(error);
         }
+        
+
 
         error.textContent = message;
         input.style.borderColor = '#D9534F';
     }
+    //Login page error 
+    function showLoginError(input, message) {
+        const oldBanner = form.querySelector('.login-error-banner');
+        if (oldBanner) oldBanner.remove();
+
+        const banner = document.createElement('div');
+        banner.className = 'login-error-banner';
+        banner.style.display = 'flex';
+        banner.style.alignItems = 'center';
+        banner.style.gap = '10px';
+        banner.style.padding = '12px 16px';
+        banner.style.marginBottom = '20px';
+        banner.style.background = 'rgba(251, 234, 230, 1)';
+        banner.style.border = '1px solid rgba(194, 65, 45, 1)';
+        banner.style.borderRadius = '8px';
+        banner.style.color = 'rgba(194, 65, 45, 1)';
+        banner.style.fontSize = '14px';
+
+        // ICON (this replaces the old banner.innerHTML lines)
+        const icon = document.createElement('span');
+        icon.textContent = '!';
+        icon.style.display = 'flex';
+        icon.style.alignItems = 'center';
+        icon.style.justifyContent = 'center';
+        icon.style.width = '18px';
+        icon.style.height = '18px';
+        icon.style.boxSizing = 'border-box';
+        icon.style.border = '2px solid #C0392B';
+        icon.style.borderRadius = '50%';
+        icon.style.fontSize = '12px';
+        icon.style.fontWeight = 'bold';
+        icon.style.flexShrink = '0';
+        banner.appendChild(icon);
+
+        
+
+        const text = document.createElement('span');
+        text.textContent = message;
+        banner.appendChild(text);
+
+        input.parentElement.before(banner);
+    }
+        
+
+    
 
     const fullNameInput = form.querySelector('#name');
     const emailInput = form.querySelector('#email');
@@ -60,7 +107,7 @@ try {
  const existingUsers = await checkResponse.json();
 
                 if (existingUsers.length > 0) {
-                    showError(emailInput, 'Email already registered');
+                    showError(emailInput, 'An account with this email already exists');
                     return;
                 }
 
@@ -148,7 +195,7 @@ window.location.href = './empty-task.html';
                     window.location.href = './empty-task.html';
 
                 } else {
-                    showError(emailInput, 'Invalid email or password');
+                    showLoginError(emailInput, 'Invalid email or password');
                 }
 
             } catch (error) {
